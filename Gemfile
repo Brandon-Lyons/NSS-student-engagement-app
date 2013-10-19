@@ -9,6 +9,7 @@ gem 'pg'
 gem 'devise'
 gem 'aasm'
 gem 'merit'
+gem 'cancan'
 
 
 # Gems used only for assets and not required
