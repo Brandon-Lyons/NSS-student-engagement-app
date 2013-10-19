@@ -34,6 +34,7 @@ group :test do
   gem "pry"
   gem "timecop"
   gem "fakeweb"
+  gem "email_spec"
 end
 
 gem 'jquery-rails'
