@@ -12,6 +12,21 @@ class CreateInitialTables < ActiveRecord::Migration
       t.boolean :confirmed
       t.timestamps
     end
+
+    create_table :instructors do |t|
+      t.string :name
+      t.string :email
+    end
+
+    create_table :mentors do |t|
+      t.string :name
+      t.string :email
+    end
+
+    create_table :students do |t|
+      t.string :name
+      t.string :email
+    end
   end
 
 
