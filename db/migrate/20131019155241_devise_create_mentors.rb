@@ -1,6 +1,6 @@
-class DeviseCreateStudents < ActiveRecord::Migration
+class DeviseCreateMentors < ActiveRecord::Migration
   def change
-    create_table(:students) do |t|
+    create_table(:mentors) do |t|
       ## Database authenticatable
       t.string :name
       t.string :email,              :null => false, :default => ""
@@ -34,10 +34,10 @@ class DeviseCreateStudents < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :students, :name
-    add_index :students, :email,                :unique => true
-    add_index :students, :reset_password_token, :unique => true
-    # add_index :students, :confirmation_token,   :unique => true
-    # add_index :students, :unlock_token,         :unique => true
+
+    add_index :mentors, :email,                :unique => true
+    add_index :mentors, :reset_password_token, :unique => true
+    # add_index :mentors, :confirmation_token,   :unique => true
+    # add_index :mentors, :unlock_token,         :unique => true
   end
 end

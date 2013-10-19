@@ -1,4 +1,8 @@
 NSSStudentEngagementApp::Application.routes.draw do
+  devise_for :instructors
+
+  devise_for :mentors
+
   devise_for :students
 
   # The priority is based upon order of creation:
