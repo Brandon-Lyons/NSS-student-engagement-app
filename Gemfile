@@ -2,14 +2,17 @@ source 'https://rubygems.org'
 
 gem 'aasm'
 gem 'devise'
+gem 'figaro'
 gem 'jquery-rails'
 gem 'merit'
+gem 'omniauth-meetup'
 gem 'pg'
 gem 'rails', '3.2.15.rc3'
 gem 'thin'
 
 group :development, :test do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem "capybara"
   gem "capybara-mechanize"
   gem "cucumber-rails", :require => false
@@ -26,6 +29,10 @@ group :development, :test do
   gem "rspec-rails"
   gem 'sqlite3'
   gem "timecop"
+end
+
+group :production do
+
 end
 
 group :assets do
