@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-
+    user ||= User.new # guest user
     if user.instructor?
         can :manage, :all
     elsif user.mentor?

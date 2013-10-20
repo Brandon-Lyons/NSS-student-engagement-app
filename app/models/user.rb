@@ -8,4 +8,22 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   has_and_belongs_to_many :roles
+
+  ROLES = %w[instructor mentor student]
+
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+  end
+
+  def roles
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
+  end
+
+  def has_role?(role)
+    if self.role == role
+      true
+    else
+      false
+    end
+  end
 end
