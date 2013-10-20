@@ -31,7 +31,6 @@ group :test do
   gem "capybara-mechanize"
   gem "database_cleaner"
   gem "factory_girl_rails"
-  gem "pry"
   gem "timecop"
   gem "fakeweb"
   gem "email_spec"
