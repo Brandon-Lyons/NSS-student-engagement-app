@@ -1,6 +1,9 @@
 NSSStudentEngagementApp::Application.routes.draw do
 
   devise_for :users
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
 
   resources :instructors
 
@@ -10,7 +13,9 @@ NSSStudentEngagementApp::Application.routes.draw do
 
   resources :events
 
-  match '/auth/:providers/callback' => 'events#index'
+  resources :social_authentications, only: [:index, :create, :destroy]
+
+  match '/auth/:providers/callback' => 'social_authentications#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
