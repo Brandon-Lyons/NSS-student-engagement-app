@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131019184615) do
+ActiveRecord::Schema.define(:version => 20131020171532) do
 
   create_table "badges_sashes", :force => true do |t|
     t.integer  "badge_id"
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(:version => 20131019184615) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "social_authentications", :force => true do |t|
+    t.integer "user_id"
+    t.string  "provider"
+    t.string  "uid"
+  end
+
+  add_index "social_authentications", ["provider"], :name => "index_social_authentications_on_provider"
+  add_index "social_authentications", ["uid"], :name => "index_social_authentications_on_uid"
+  add_index "social_authentications", ["user_id"], :name => "index_social_authentications_on_user_id", :unique => true
 
   create_table "students", :force => true do |t|
     t.string "name"
