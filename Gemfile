@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'aasm'
 gem 'devise'
 gem 'figaro'
+gem 'httparty'
 gem 'jquery-rails'
 gem 'merit'
 gem 'omniauth-meetup'
@@ -27,7 +28,6 @@ group :development, :test do
   gem "pry"
   gem 'pry-rails'
   gem "rspec-rails"
-  gem 'sqlite3'
   gem "timecop"
 end
 
