@@ -1,0 +1,23 @@
+$nss-orange: #fec013;
+
+@mixin border-radius($radius){
+-webkit-border-radius: $radius;
+   -moz-border-radius: $radius;
+        border-radius: $radius;
+}
+
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+
+@mixin background-gradient($start, $stop){
+	background: -moz-linear-gradient(top, $start 0%, $stop 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$stop));
+	background: -webkit-linear-gradient(top, $start 0%,$stop 100%);
+	background: -o-linear-gradient(top, $start 0%,$stop 100%);
+	background: -ms-linear-gradient(top, $start 0%,$stop 100%);
+	background: linear-gradient(to bottom, $start 0%,$stop 100%);
+}
+

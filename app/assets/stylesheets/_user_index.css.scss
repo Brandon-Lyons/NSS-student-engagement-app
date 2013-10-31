@@ -1,0 +1,41 @@
+.student_info {
+	position: relative;
+	bottom: 0px;
+	margin-left: 10px;
+	margin-bottom: -20px;
+	padding: 8px;
+
+	p {
+	color: white;
+	font-size: 1.2em;
+	}
+}
+
+.user_sidebar {
+	@include box-shadow(0 2px 2px rgba(0,0,0,.5));
+	background-color: rgba(254,192,19,.2);
+}
+
+.dropdown-toggle {
+	margin-bottom: 10px;
+}
+
+.note-tabs {
+	margin-top: 6%;
+	margin-bottom: 100px;
+	margin-right: 1%;
+	
+	a {
+	color: $nss-orange;
+	}
+}
+
+.tab-pane {
+	background-color: white;
+	padding: 10px;
+	height:	275px;
+	
+	input {
+		color: red;
+		}
+}
