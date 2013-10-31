@@ -34,6 +34,9 @@ GEM
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass-rails (3.0.0.3)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     builder (3.0.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -93,6 +96,8 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     json (1.8.1)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -195,6 +200,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  bootstrap-sass-rails
   capybara
   capybara-mechanize
   coffee-rails (~> 3.2.1)
@@ -205,6 +211,7 @@ DEPENDENCIES
   factory_girl_rails
   fakeweb
   jquery-rails
+  jquery-ui-rails
   merit
   pg
   rails (= 3.2.15.rc3)
