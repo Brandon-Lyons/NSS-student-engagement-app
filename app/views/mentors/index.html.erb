@@ -1,1 +1,87 @@
-<p>Hello, Mentor <%= @mentor.name %>!</p>
+
+<div class="container content_panel">
+	<div class="container_overlay">
+		<div class="row">
+	    <div class="col-md-3">
+	    	<h3>MENTOR PANEL
+	    		________________</h3>
+	    	<div id="mentor_sidebar">
+					<div class="student_info">
+						<p>Your current student:<br>
+								(@student.name)
+						<p>Email: <br>
+							(@student.email)</p>
+						<p>Phone: <br>
+							(@student.phone)</p>
+						<p>Times Met:<br>
+							in person: <br>
+							by phone:
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="note-tabs col-md-8">
+				<ul class="nav nav-tabs">
+				  <li class="active" ><a href="#new" data-toggle="tab">New Feedback</a></li>
+				  <li><a href="#old" data-toggle="tab">Sent Feedback</a></li>
+				  <li><a href="#yadda" data-toggle="tab">Yadda</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+	        <div class="tab-pane fade in active" id="new">
+	        	<%= form_for [@mentor] do |f| %>
+	          <%= f.text_area :email, :cols => 97, :rows => 11 %>
+	          <% end %>
+	          <button type="button" class="btn btn-warning	">Submit</button>
+	        </div>
+	        <div class="tab-pane fade" id="old">
+			      <table class="table table-condensed">
+			        <thead>
+			          <tr>
+			            <th>#</th>
+			            <th>Subject</th>
+			            <th>Sent</th>
+			            <th>Read by instrux</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>1</td>
+			            <td>Dave is a coding genius</td>
+			            <td>12/03/13</td>
+			            <td>N</td>
+			          </tr>
+			          <tr>
+			            <td>2</td>
+			            <td>Dave hacked the NSS!</td>
+			            <td>11/24/13</td>
+			            <td>Y</td>
+			          </tr>
+			          <tr>
+			            <td>3</td>
+			            <td >Dave is clueless</td>
+			            <td>11/03/13</td>
+			            <td>Y</td>
+			          </tr>
+			        </tbody>
+			      </table>
+	        </div>
+	        <div class="tab-pane fade" id="yadda">
+	          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+	        </div>
+      	</div>
+			</div>
+		</div>
+		<h3>________________</h3>
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		    Former Students <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a href="#">Student1</a></li>
+		    <li><a href="#">Student2</a></li>
+		    <li><a href="#">Student3</a></li>
+		  </ul>
+		</div> <!-- end dropdown -->	
+	</div>
+</div>
+

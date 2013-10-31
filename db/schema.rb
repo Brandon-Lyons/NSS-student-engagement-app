@@ -51,9 +51,23 @@ ActiveRecord::Schema.define(:version => 20131020040441) do
   end
 
   create_table "instructors", :force => true do |t|
-    t.string "name"
-    t.string "email"
+    t.string   "name"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
+  add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
 
   create_table "interactions", :force => true do |t|
     t.datetime "date"
@@ -64,9 +78,23 @@ ActiveRecord::Schema.define(:version => 20131020040441) do
   end
 
   create_table "mentors", :force => true do |t|
-    t.string "name"
-    t.string "email"
+    t.string   "name"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "mentors", ["email"], :name => "index_mentors_on_email", :unique => true
+  add_index "mentors", ["reset_password_token"], :name => "index_mentors_on_reset_password_token", :unique => true
 
   create_table "merit_actions", :force => true do |t|
     t.integer  "user_id"
@@ -117,9 +145,24 @@ ActiveRecord::Schema.define(:version => 20131020040441) do
   end
 
   create_table "students", :force => true do |t|
-    t.string "name"
-    t.string "email"
+    t.string   "name"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "students", ["email"], :name => "index_students_on_email", :unique => true
+  add_index "students", ["name"], :name => "index_students_on_name"
+  add_index "students", ["reset_password_token"], :name => "index_students_on_reset_password_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

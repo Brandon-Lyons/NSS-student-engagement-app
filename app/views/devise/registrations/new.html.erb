@@ -1,28 +1,30 @@
-<h2>Sign up</h2>
+<div class="form-div">
+  <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :name %>
-  <%= f.text_field :name, :autofocus => true %></div>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div><%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true %></div>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></div>
 
-  <%= f.label "Select a role", :role %>
-  <p>Instructor</p>
-  <%= f.radio_button :role, 'instructor' %>
-  <p>Mentor</p>
-  <%= f.radio_button :role, 'mentor' %>
-  <p>Student</p>
-  <%= f.radio_button :role, 'student' %>
+    <%= f.label "Select a role", :role %>
+    <p>Instructor</p>
+    <%= f.radio_button :role, 'instructor' %>
+    <p>Mentor</p>
+    <%= f.radio_button :role, 'mentor' %>
+    <p>Student</p>
+    <%= f.radio_button :role, 'student' %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+    <div><%= f.submit "Sign up" %></div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
