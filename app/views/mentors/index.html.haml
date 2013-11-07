@@ -1,7 +1,7 @@
 .container.content_panel
 	.container_overlay
 		.row
-			.col-md-3
+			.col-md-3.sidebar
 				%h3
 					MENTOR PANEL
 					________________
@@ -17,6 +17,21 @@
 						in person: <br>
 						by phone:
 						</p>
+				.btn-group.students_toggle
+					%h3 ________________
+					%button.btn-default.dropdown-toggle.btn{ :type => "button", :data => { :toggle => "dropdown"}}
+						Former Students
+						%span.caret
+					%ul.dropdown-menu{ :role => "menu"}
+						%li
+							%a{ :href => "#"}
+								Student1
+						%li
+							%a{ :href => "#"}
+								Student2
+						%li
+							%a{ :href => "#"}
+								Student3
 			.note-tabs.col-md-8
 				%ul.nav.nav-tabs
 					%li.active
@@ -60,18 +75,4 @@
 					.tab-pane.fade#yadda
 						%p
 							Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
-				%h3 ________________
-				.btn-group
-					%button.btn-default.dropdown-toggle.btn{ :type => "button", :data => { :toggle => "dropdown"}} 
-						Former Students 
-						%span.caret
-					%ul.dropdown-menu{ :role => "menu"}
-						%li
-							%a{ :href => "#"}
-								Student1
-						%li
-							%a{ :href => "#"}
-								Student2
-						%li
-							%a{ :href => "#"}
-								Student3
+				
