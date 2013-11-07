@@ -1,0 +1,50 @@
+.container.content_panel
+	.container_overlay
+		.row
+			.col-md-3
+				%h3 
+					(@student.name)
+					________________
+				.user_sidebar
+					.student_info
+						<p>Meetups attended:<br>
+						(# of meetups/popover with names)
+						<p>Your next meetup: <br>
+						(meetup name/link to meetup page)<br>
+						(meetup date)</p>
+						<p>Your Mentor:<br>
+						(@Mentor.name/popover with contact info)</p>
+						<p>Times Met:<br>
+						in person: <br>
+						by phone:
+						</p>
+			.note-tabs.col-md-8
+				%ul.nav.nav-tabs
+					%li.active 
+						%a{ :href => "#meetup", :data => {:toggle => "tab"}}
+							New Meetup Report
+					%li
+						%a{ :href => "#mentor", :data => {:toggle => "tab"}}
+							New Mentor Meeting Report
+					%li
+						%a{ :href => "#standings", :data => {:toggle => "tab"}}
+							Badge Standings
+				#myTabContent.tab-content
+					.tab-pane.fade.in.active#meetup
+						= form_for [@student] do |f|
+							= f.text_area :email, {:class => "form-control", :rows => "10"}
+							%button.btn-warning.btn{:type => "submit"} Submit
+					.tab-pane.fade#mentor
+						%p
+							= form_for [@student] do |f|
+								= f.text_field :name, {:placeholder => "Meeting Date", :id => "meetDate"}
+								%br
+								%br
+								#meeting_comments.mentor_meeting_comment_box
+								= f.text_area :encrypted_password, {:class => "form-control", :rows => "5", :placeholder => "Notes about your mentor session.", :id => "meeting_note"}
+								= f.check_box :email
+								= f.label :in_person 
+								%span#in_person Meeting was in person
+						.datepicker
+					.tab-pane.fade#standings
+						%p Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
