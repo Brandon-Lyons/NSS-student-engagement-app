@@ -13,7 +13,7 @@
 
 .user_sidebar {
 	@include box-shadow(0 2px 2px rgba(0,0,0,.5));
-	background-color: rgba(254,192,19,.2);
+	background-color: rgba(82,125,191,.4);
 }
 
 .dropdown-toggle {
@@ -30,12 +30,16 @@
 	}
 }
 
+#in_person {
+	margin-left: -60px;
+}
+
 .tab-pane {
 	background-color: white;
 	padding: 10px;
 	height:	275px;
 	
 	input {
-		color: red;
+		color: black;
 		}
 }
