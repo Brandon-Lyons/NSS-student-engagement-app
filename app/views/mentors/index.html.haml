@@ -1,0 +1,77 @@
+.container.content_panel
+	.container_overlay
+		.row
+			.col-md-3
+				%h3
+					MENTOR PANEL
+					________________
+				.user_sidebar
+					.student_info
+						<p>Your current student:<br>
+						(@student.name)
+						<p>Email: <br>
+						(@student.email)</p>
+						<p>Phone: <br>
+						(@student.phone)</p>
+						<p>Times Met:<br>
+						in person: <br>
+						by phone:
+						</p>
+			.note-tabs.col-md-8
+				%ul.nav.nav-tabs
+					%li.active
+						%a{ :href => "#new", :data => { :toggle => "tab"}}
+							New Feedback
+					%li
+						%a{ :href => "#old", :data => { :toggle => "tab"}}
+							Sent Feedback
+					%li
+						%a{ :href => "#yadda", :data => { :toggle => "tab"}}
+							Yadda
+				.myTabContent.tab-content
+					.tab-pane.fade.in.active#new
+						= form_for [@mentor] do |f|
+							= f.text_area :email, :cols => 97, :rows => 11
+					%button.btn-warning.btn{ :type => "submit"} Submit
+					.tab-pane.fade#old
+						%table.table.table-condensed
+							%thead
+								%tr
+									%th #
+									%th Subject
+									%th Sent
+									%th Read by instrux
+							%tbody
+								%tr
+									%td 1
+									%td Dave is a coding genius
+									%td 12/03/13
+									%td N
+								%tr
+									%td 2
+									%td Dave hacked the NSS!
+									%td 11/24/13
+									%td Y
+								%tr
+									%td 3
+									%td Dave is clueless
+									%td 11/03/13
+									%td Y
+					.tab-pane.fade#yadda
+						%p
+							Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+				%h3 ________________
+				.btn-group
+					%button.btn-default.dropdown-toggle.btn{ :type => "button", :data => { :toggle => "dropdown"}} 
+						Former Students 
+						%span.caret
+					%ul.dropdown-menu{ :role => "menu"}
+						%li
+							%a{ :href => "#"}
+								Student1
+						%li
+							%a{ :href => "#"}
+								Student2
+						%li
+							%a{ :href => "#"}
+								Student3
